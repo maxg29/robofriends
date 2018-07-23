@@ -22,6 +22,11 @@ class App extends Component {
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
   }
+  
+  removeItem (itemIndex) {
+    robots.splice(itemIndex, 1);
+    this.setState({robots: robots});
+  }
 
   render() {
     const { robots, searchfield } = this.state;
