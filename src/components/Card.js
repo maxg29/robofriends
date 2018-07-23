@@ -11,7 +11,7 @@ const Card = ({ name, email, id, removeItem }) => {
             <div>
                 <h2>{name}</h2>
                 <p>{email}</p>
-                <button type='button' className='close' onClick={this.removeCard}>&times;</button>
+                <button type='button' onClick={this.removeCard}Remove</button>
             </div>
         </div>
     );
