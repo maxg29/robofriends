@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const { robots, searchfield } = this.state;
+    const { robots, searchfield, removeItems } = this.state;
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     })
