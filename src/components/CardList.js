@@ -1,25 +1,39 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({ robots }) => {
+class CardList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      robots: this.props.robots,
+    };
+  }
 
-  return (
-    <div>
-      {
-        robots.map((user, i) => {
-          return (
-            <Card
-              key={i}
-              id={robots[i].id}
-              name={robots[i].name}
-              email={robots[i].email}
-              removeItem={robots[i].removeItem} 
-            />
-          );
-        })
-      }
-    </div>
-  );
+  render(){
+    
+    // if(true) {
+    //   throw new Error('NOOOOOO');
+    // }
+
+    return (
+      <div>
+        {
+          this.props.robots.map((users, i) => {
+            return (
+              <Card
+                key={i}
+                id={this.props.robots[i].id}
+                name={this.props.robots[i].name}
+                email={this.props.robots[i].email}
+                value={this.state.robots[i]} 
+                // onClick={this.props.remove(this.props.robots[i].id)}
+              />
+            );
+          })
+        }
+      </div>
+    );
+  }
 }
 
 export default CardList;

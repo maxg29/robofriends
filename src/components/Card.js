@@ -1,20 +1,29 @@
 import React from 'react';
 
-removeCard() {    
-    this.props.removeItem(this.props.id);
-}
+class Card extends React.Component {
+    // constructor(props) {
+    //   super(props);
+    //   this.state = {
+    //     idToRemove: null,
+    //   };
+    // }
 
-const Card = ({ name, email, id, removeItem }) => {
-    return (
-        <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
-            <img alt='robotphoto' src={`https://robohash.org/${name}?200x200`} />
+    render() {
+        // console.log(this.props.id);
+        return(
+            <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
+            <img alt='robotphoto' src={`https://robohash.org/${this.props.name}?200x200`} />
             <div>
-                <h2>{name}</h2>
-                <p>{email}</p>
-                <button type='button' onClick={this.removeCard}Remove</button>
+                <h2>{this.props.name}</h2>
+                <p>{this.props.email}</p>
+                <button className="f6 link dim br3 ph3 pv2 mb2 dib white bg-mid-gray"
+                >
+                Remove
+                </button>
             </div>
         </div>
-    );
+        );
+    }
 }
 
 export default Card;
